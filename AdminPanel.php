@@ -1,5 +1,5 @@
 <?php
-// Assuming you have a database connection established
+
 include 'conn.php';
 
 // Start the session

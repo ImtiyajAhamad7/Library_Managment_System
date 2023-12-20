@@ -1,5 +1,5 @@
 <?php
-// Assuming you have a database connection established
+
 include 'conn.php';
 // Process the form submission when the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

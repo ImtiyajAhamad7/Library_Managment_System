@@ -14,6 +14,7 @@
 <div class="mt-3">
   <a href="adminlogin.php" class="btn btn-secondary btn-lg btn-block">AdminLogin</a>
   <a href="login.php" class="btn btn-primary btn-lg btn-block">UserLogin</a>
+  <a href="userRegistration.php" class="btn btn-primary btn-lg btn-block">User Registration</a>
 
   </div>
 

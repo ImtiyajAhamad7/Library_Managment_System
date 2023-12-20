@@ -21,9 +21,7 @@
 </style>
 
 <?php
-// Assuming you have a database connection established
 
-// Query to fetch all books
 include 'conn.php';
 
 $sql = "SELECT * FROM Books";

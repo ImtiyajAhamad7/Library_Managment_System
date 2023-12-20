@@ -1,11 +1,26 @@
 <?php
-// Assuming you have a database connection established
+
 include 'conn.php';
 
-// Replace 'selectedUserID' with the actual UserID for which you want to display issued books
-$selectedUserID = 123; // Replace with the actual UserID
+// Start the session
+session_start();
 
-// Fetch details of books issued to the selected user
+
+if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && $_SESSION['Role'] === 'Admin')) {
+    header("Location: login.php"); // Redirect to the login page
+    exit;
+}
+?>
+
+
+<?php
+
+include 'conn.php';
+
+
+$selectedUserID = 123; 
+
+
 $sql = "SELECT Transactions.TransactionID, Books.Title AS BookTitle, Books.Author, Transactions.IssueDate, Transactions.ReturnDate 
         FROM Transactions 
         INNER JOIN Books ON Transactions.BookID = Books.BookID 
