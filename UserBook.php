@@ -6,7 +6,7 @@ include 'conn.php';
 session_start();
 
 
-if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && $_SESSION['Role'] === 'Admin')) {
+if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true )) {
     header("Location: login.php"); // Redirect to the login page
     exit;
 }

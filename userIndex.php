@@ -11,7 +11,26 @@
   <div class="card-body">
     <h5 class="card-title">Book-Issued</h5>
 
-    <p class="card-text"></p>
+    <p class="card-text"><?php
+
+include 'conn.php';
+
+
+$selectedUserID = 123; 
+
+// Fetch total number of books issued to the selected user
+$sql = "SELECT COUNT(*) AS TotalIssuedBooks FROM Transactions WHERE UserID = $selectedUserID AND Returned = FALSE";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $totalIssuedBooks = $row['TotalIssuedBooks'];
+    echo "Total number of books issued to User ID $selectedUserID: " . $totalIssuedBooks;
+} else {
+    echo "No books issued to this user";
+}
+?>
+</p>
     
     <a href="UserBook.php" class="card-link">UserBook Detail</a>
   </div>
