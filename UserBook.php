@@ -9,7 +9,7 @@ $selectedUserID = 123; // Replace with the actual UserID
 $sql = "SELECT Transactions.TransactionID, Books.Title AS BookTitle, Books.Author, Transactions.IssueDate, Transactions.ReturnDate 
         FROM Transactions 
         INNER JOIN Books ON Transactions.BookID = Books.BookID 
-        WHERE Transactions.UserID = $selectedUserID AND Transactions.Returned = FALSE"; // Modify this query according to your schema
+        WHERE Transactions.UserID = $selectedUserID AND Transactions.Returned = 0"; // Modify this query according to your schema
 
 $result = $conn->query($sql);
 

@@ -1,3 +1,16 @@
+<?php
+// Assuming you have a database connection established
+include 'conn.php';
+
+// Start the session
+session_start();
+
+// Check if the user is logged in and has the admin role
+if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true )) {
+    header("Location: login.php"); // Redirect to the login page
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
