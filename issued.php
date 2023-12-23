@@ -1,6 +1,7 @@
 <?php
 // Assuming you have a database connection established
 include 'conn.php';
+include 'AdminLoginCheck.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $selectedUserID = $_POST['user']; // Assuming you have a form field with name 'user' for selecting the user

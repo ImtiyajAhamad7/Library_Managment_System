@@ -20,30 +20,21 @@ $result = $conn->query($sql);
 // Check if a user was found with the entered credentials
 if ($result->num_rows > 0) {
     // Authentication successful
+    $row = $result->fetch_assoc();
     $_SESSION['loggedin'] = true;
 
-    while($row = mysqli_fetch_assoc($result)){
-
-        session_start();
-
-       
-        $uid = $row["Role"];
-
-        if($uid=="Admin"){
-            header("Location: AdminPanel.php");
-        }else{
-            header("Location: userIndex.php");
-        }
+    if ($row["Role"] == "Admin") {
+        header("Location: AdminPanel.php");
+        exit(); // Ensure to stop script execution after redirection
+    } else {
+        header("Location: userIndex.php");
+        exit(); // Ensure to stop script execution after redirection
     }
-    
-
-    // Redirect to a dashboard or other page
-    
 } else {
-    // Authentication failed
-    echo "Invalid username or password.";
-    // Redirect back to the login page
+    // Authentication failed 
+    $_SESSION['loggedin'] = false;
     header("Location: login.php");
+    exit(); // Ensure to stop script execution after redirection
 }
 
 $conn->close();

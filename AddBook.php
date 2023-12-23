@@ -1,7 +1,9 @@
 <?php
 
 include 'conn.php';
-// Process the form submission when the form is submitted
+
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST['title'];
     $author = $_POST['author'];

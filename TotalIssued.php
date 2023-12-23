@@ -1,6 +1,7 @@
 <?php
 // Assuming you have a database connection established
 include 'conn.php';
+include 'AdminLoginCheck.php';
 
 // Fetch details of issued books
 $sql = "SELECT Transactions.TransactionID, Users.Name AS UserName, Books.Title AS BookTitle, Transactions.IssueDate, Transactions.ReturnDate 

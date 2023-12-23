@@ -7,6 +7,15 @@
     <title>Document</title>
 </head>
 <body>
+<ul class="nav justify-content-center">
+  
+  <li class="nav-item">
+    <a class="nav-link" href="logout.php">logout</a>
+  </li>
+
+  </ul>
+
+
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">Book-Issued</h5>
